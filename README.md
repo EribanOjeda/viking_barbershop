@@ -7,7 +7,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 - Eriban Wagner Ojeda Ramirez — Scrum Master / Product Owner
 - Jasmani — Backend - se clono con exito
 - Jose — Frontend
-- Luis — QA / Testing
+- Luis Anacri — QA / Testing - Clonacion exitosa
 
 ## Instalación rápida
 ```bash
