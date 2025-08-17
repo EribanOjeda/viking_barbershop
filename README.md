@@ -1,127 +1,58 @@
-# Viking Barbershop — Starter (Overlay para Laravel 11)
+# Viking Barbershop
 
-Este ZIP **no contiene todo Laravel**. Es un *overlay* listo para copiarse encima de un proyecto nuevo creado con:
-```
-composer create-project laravel/laravel viking_barbershop
-```
+![Laravel](https://img.shields.io/badge/Laravel-11/12-red)
+![PHP](https://img.shields.io/badge/PHP-%3E=8.2-777bb4)
+![MySQL](https://img.shields.io/badge/MySQL-8.x-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.x-7952B3)
 
-Incluye:
-- Migraciones, Modelos y Controladores para **Clientes**, **Reservas** y **Galería**.
-- Vistas Blade con **Bootstrap 5 (CDN)** y navegación básica.
-- Seeders de ejemplo.
-- Estructura de carpetas separada por **roles del equipo**.
-- Script `scripts/setup_windows.bat` para automatizar el arranque en Windows (CMD).
-
-> Si prefieres no usar Node/Vite, ¡no hay problema! Las vistas usan Bootstrap por CDN.
+**Fullstack Project** · **Proyecto Web de Viking Barbershop**  
+Gestión completa para barbería: **reservas**, **clientes**, **galería con subida de imágenes**, **blog**, **auth** con **roles** (admin/staff/cliente), **buscador** y **API JSON**.
 
 ---
 
-## Requisitos (Windows)
-- PHP 8.2+ (recomendado XAMPP)
-- Composer
-- MySQL (MariaDB) levantado
-- Git (para subir a GitHub)
+## 👥 Integrantes
+- **Eriban Wagner Ojeda Ramirez** — Scrum Master / Product Owner
+- **Jasmani** — Backend
+- **Jose** — Frontend
+- **Luis** — QA / Testing
 
-## Pasos Express (CMD)
-1) Crea la carpeta de trabajo y entra:
-```
-C:\> mkdir C:\taller\viking && cd C:\taller\viking
-```
+**Curso:** TALLER EN APLICACIONES EN INTERNET
 
-2) Crea el proyecto base de Laravel:
-```
-C:\taller\viking> composer create-project laravel/laravel viking_barbershop
-```
+---
 
-3) Copia el contenido de este ZIP dentro de `viking_barbershop` **sobrescribiendo** cuando pregunte.
-   - Estructura final esperada:
-     - `viking_barbershop/app/...`
-     - `viking_barbershop/database/...`
-     - `viking_barbershop/resources/views/...`
-     - etc.
+## ✨ Funcionalidades
+- **Clientes** (CRUD) y **Reservas** (crear/listar/cambiar estado).
+- **Galería** con subida de imágenes (storage público).
+- **Blog** con panel **Admin** (crear/editar/publicar).
+- **Autenticación** (registro/login/logout) con **roles**.
+- **Buscador global** (clientes/reservas) desde la navbar.
+- **API JSON** de lectura: `/api/clientes`, `/api/reservas`, `/api/posts`.
+- **Responsive** con Bootstrap 5.
+- (Opcional) **Vue 3 + Vite** para widget de reservas.
 
-4) Crea la base de datos en MySQL (por ejemplo `viking_db`).
+---
 
-5) Duplica `.env.example` a `.env` y configura tu conexión:
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=viking_db
-DB_USERNAME=root
-DB_PASSWORD=
-```
-Luego ejecuta:
-```
+## 🧱 Tecnologías
+- PHP 8.2+, Laravel 11/12
+- MySQL / MariaDB
+- Bootstrap 5
+- (Opcional) Node.js + Vite + Vue 3
+
+---
+
+## 🚀 Instalación
+> Si tu proyecto está en **subcarpeta** `viking_barbershop/`, primero: `cd viking_barbershop`
+
+```bash
+composer install
+cp .env.example .env
 php artisan key:generate
+
+# Configura tu .env (ejemplo local)
+# DB_DATABASE=viking_db
+# DB_USERNAME=root
+# DB_PASSWORD=
+
 php artisan migrate --seed
-```
-
-6) Levanta el servidor:
-```
+php artisan storage:link
 php artisan serve
-```
-Navega a `http://127.0.0.1:8000`
-
----
-
-## Subir a GitHub (paso a paso)
-Desde `viking_barbershop`:
-```
-git init
-git add .
-git commit -m "Proyecto Viking Barbershop: base con Bootstrap, CRUD y reservas"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/VikingBarbershop.git
-git push -u origin main
-```
-
-> Si te pide usuario/contraseña, usa **token personal** de GitHub como contraseña.
-
----
-
-## Estructura separada por roles
-- `equipo/scrum/` — Eriban (Scrum Master): ceremonias, roadmap, actas.
-- `equipo/backend/` — Jasmani (Backend): endpoints, validaciones, pruebas API.
-- `equipo/frontend/` — Jose (Frontend): vistas, componentes, UX.
-- `equipo/qa/` — Luis (QA): checklist, casos de prueba, hallazgos.
-
-Cada carpeta trae un `README.md` con responsabilidades y tareas sugeridas.
-
----
-
-## Módulos incluidos
-- **Clientes**: CRUD completo.
-- **Reservas**: crear/listar/cambiar estado; relación con cliente.
-- **Galería**: listado de fotos de trabajos (para demo con URL).
-
-> Todo con ejemplos de validación y mensajes Bootstrap.
-
-¡Listo! Si necesitas otra estructura (por ejemplo SPA en Vue), podemos iterar.
-
-
----
-
-## Novedades agregadas
-- **Autenticación** (login/registro/logout) y **roles** (`admin`, `staff`, `cliente`).
-- **Mis reservas** para usuarios autenticados.
-- **Blog** con **admin CRUD** y **subida de imágenes** (usa `storage:link`).
-- **Galería** permite subir imágenes al servidor.
-- **API JSON** de lectura (`/api/clientes`, `/api/reservas`, `/api/posts`) y ejemplo `POST /api/reservas`.
-- **Buscador global** en la navbar.
-- **Seed** de admin: `admin@viking.local` / `admin123` (cámbialos).
-
-## Comandos extra importantes
-```
-php artisan storage:link    # habilita /storage para imágenes
-php artisan migrate --seed  # crea tablas + admin y demo
-```
-> **Seguridad:** cambia la contraseña del admin en cuanto entres.
-
-## Vue 3 (opcional)
-Si tu profe exige Vue, ejecuta:
-```
-npm install
-npm run dev
-```
-Ya existe `resources/js/app.js` con Vue y un ejemplo de componente. Las vistas Blade seguirán funcionando incluso sin compilar.
