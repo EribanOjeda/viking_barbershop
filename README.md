@@ -5,7 +5,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 
 ## Integrantes
 - Eriban Wagner Ojeda Ramirez — Scrum Master / Product Owner
-- Jasmani — Backend
+- Jasmani — Backend - se clono con exito
 - Jose — Frontend
 - Luis — QA / Testing
 
