@@ -1,0 +1,10 @@
+
+/vendor/
+/node_modules/
+/public/build/
+.env
+.phpunit.result.cache
+storage/*.key
+.idea/
+.vscode/
+.DS_Store
