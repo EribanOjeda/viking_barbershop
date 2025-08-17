@@ -31,7 +31,7 @@ class GaleriaController extends Controller
 
         Foto::create([
             'titulo'      => $data['titulo'],
-            'imagen_url'  => 'storage/'.$path, // se mostrará con asset($f->imagen_url)
+            'imagen_url'  => 'storage/'.$path,
             'descripcion' => $data['descripcion'] ?? null,
         ]);
 
@@ -52,7 +52,6 @@ class GaleriaController extends Controller
         ]);
 
         if ($request->hasFile('imagen')) {
-            // Borra la anterior si era local
             if ($foto->imagen_url && str_starts_with($foto->imagen_url, 'storage/')) {
                 $old = str_replace('storage/', '', $foto->imagen_url);
                 Storage::disk('public')->delete($old);
