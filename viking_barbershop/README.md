@@ -14,7 +14,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # se soluciono el problema al quere guardar las tablas
 # se empezo con la migraciones de tablas
 # implementacion entorno grafico
-
+# se corrigio el problema con push
 
 
 ## Instalación rápida
