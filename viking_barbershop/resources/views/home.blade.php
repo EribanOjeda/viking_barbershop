@@ -10,17 +10,22 @@
     <h2 class="h5 mt-4">Galería reciente</h2>
     <div class="row g-3">
       @forelse($fotos as $foto)
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="{{ $foto->imagen_url }}" class="card-img-top" alt="{{ $foto->titulo }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ $foto->titulo }}</h5>
-            <p class="card-text text-muted">{{ Str::limit($foto->descripcion, 80) }}</p>
+        <div class="col-md-4">
+          <div class="card h-100">
+            @php
+              // Si existe /public/img/galeria/{id}.jpg lo usamos; si no, usamos la URL de la BD
+              $local = 'img/galeria/'.$foto->id.'.jpg';
+              $src = file_exists(public_path($local)) ? asset($local) : $foto->imagen_url;
+            @endphp
+            <img src="{{ $src }}" class="card-img-top" alt="{{ $foto->titulo }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ $foto->titulo }}</h5>
+              <p class="card-text text-muted">{{ Str::limit($foto->descripcion, 80) }}</p>
+            </div>
           </div>
         </div>
-      </div>
       @empty
-      <p class="text-muted">Sin fotos por ahora.</p>
+        <p class="text-muted">Sin fotos por ahora.</p>
       @endforelse
     </div>
   </div>
@@ -56,18 +61,18 @@
 <h2 class="h5 mt-4">Últimos modelos en tendencia</h2>
 <div class="row g-3">
   @forelse($posts as $p)
-  <div class="col-md-4">
-    <div class="card h-100">
-      @if($p->imagen_path)
-        <img class="card-img-top" src="{{ asset('storage/'.$p->imagen_path) }}" alt="{{ $p->titulo }}">
-      @endif
-      <div class="card-body">
-        <h5 class="card-title">{{ $p->titulo }}</h5>
-        <a href="{{ route('blog.show',$p->slug) }}" class="btn btn-sm btn-outline-primary">Leer</a>
+    <div class="col-md-4">
+      <div class="card h-100">
+        @if($p->imagen_path)
+          <img class="card-img-top" src="{{ asset('storage/'.$p->imagen_path) }}" alt="{{ $p->titulo }}">
+        @endif
+        <div class="card-body">
+          <h5 class="card-title">{{ $p->titulo }}</h5>
+          <a href="{{ route('blog.show',$p->slug) }}" class="btn btn-sm btn-outline-primary">Leer</a>
+        </div>
       </div>
     </div>
-  </div>
   @empty
-  <p class="text-muted">Aún no hay publicaciones.</p>
+    <p class="text-muted">Aún no hay publicaciones.</p>
   @endforelse
 </div>
