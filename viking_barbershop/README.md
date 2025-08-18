@@ -20,7 +20,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # aun tengo problemas con la parte de push
 # corregimos los datos que requieren las pestañas
 # empece con el archivo de registro
-
+# empezamos a crear las pestañas de funciones para nuestra pagina
 
 ## Instalación rápida
 ```bash
