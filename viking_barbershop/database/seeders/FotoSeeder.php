@@ -9,21 +9,26 @@ class FotoSeeder extends Seeder
 {
     public function run(): void
     {
+        // ⚠️ En desarrollo está bien; en producción evita truncate() si ya hay datos reales
         Foto::truncate();
+
         Foto::insert([
             [
                 'titulo' => 'Corte clásico',
-                'imagen_url' => 'https://picsum.photos/seed/corte1/600/400',
+                // Imagen de corte clásico (barber/haircut) 600x400
+                'imagen_url' => 'https://source.unsplash.com/600x400/?barber,haircut&sig=1',
                 'descripcion' => 'Estilo clásico con degradado suave.'
             ],
             [
                 'titulo' => 'Fade moderno',
-                'imagen_url' => 'https://picsum.photos/seed/corte2/600/400',
+                // Imagen de fade moderno 600x400
+                'imagen_url' => 'https://source.unsplash.com/600x400/?fade,haircut,barbershop&sig=2',
                 'descripcion' => 'Fade medio con texturizado.'
             ],
             [
                 'titulo' => 'Barba perfilada',
-                'imagen_url' => 'https://picsum.photos/seed/corte3/600/400',
+                // Imagen de barbería enfocada en barba 600x400
+                'imagen_url' => 'https://source.unsplash.com/600x400/?barber,beard,trim&sig=3',
                 'descripcion' => 'Perfilado y contorno con navaja.'
             ],
         ]);

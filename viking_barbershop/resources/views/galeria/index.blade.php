@@ -5,7 +5,13 @@
   @forelse($fotos as $f)
   <div class="col-md-4">
     <div class="card h-100">
-      <img src="{{ $f->imagen_url }}" class="card-img-top" alt="{{ $f->titulo }}">
+      @php
+        $rutaLocal = 'img/galeria/'.$f->id.'.jpg'; // nombre del archivo según ID
+      @endphp
+      <img src="{{ file_exists(public_path($rutaLocal)) ? asset($rutaLocal) : $f->imagen_url }}" 
+           class="card-img-top" 
+           alt="{{ $f->titulo }}" 
+           style="height:200px; object-fit:cover;">
       <div class="card-body">
         <h5 class="card-title">{{ $f->titulo }}</h5>
         <p class="card-text text-muted">{{ Str::limit($f->descripcion, 100) }}</p>
