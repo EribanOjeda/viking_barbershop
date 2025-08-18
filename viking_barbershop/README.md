@@ -19,6 +19,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # se empezo la parte de frontend
 # aun tengo problemas con la parte de push
 # corregimos los datos que requieren las pestañas
+# empece con el archivo de registro
 
 
 ## Instalación rápida
