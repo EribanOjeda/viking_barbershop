@@ -24,6 +24,8 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # corregir problemas (no reconoce variables)
 # se actualizo campos de datos en el frontend
 
+
+
 ## Instalación rápida
 ```bash
 composer install
