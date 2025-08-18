@@ -16,6 +16,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # implementacion entorno grafico
 # se corrigio el problema con push
 # modificacion de la carpeta models
+# se empezo la parte de frontend
 
 
 ## Instalación rápida

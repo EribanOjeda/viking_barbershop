@@ -53,7 +53,7 @@
 
 
 @php($posts = \App\Models\Post::whereNotNull('published_at')->latest('published_at')->take(3)->get())
-<h2 class="h5 mt-4">Últimos artículos del blog</h2>
+<h2 class="h5 mt-4">Últimos modelos en tendencia</h2>
 <div class="row g-3">
   @forelse($posts as $p)
   <div class="col-md-4">
