@@ -22,6 +22,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # empece con el archivo de registro
 # empezamos a crear las pestañas de funciones para nuestra pagina
 # corregir problemas (no reconoce variables)
+# haciendo pruebas para que el frontend agarre los datos en la base de datos
 
 ## Instalación rápida
 ```bash
