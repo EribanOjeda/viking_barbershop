@@ -11,6 +11,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 
 
 # se empezaron a crear las tablas de la base de datos
+# se soluciono el problema al quere guardar las tablas
 ## Instalación rápida
 ```bash
 composer install
