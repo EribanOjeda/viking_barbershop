@@ -18,7 +18,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # modificacion de la carpeta models
 
 
-## Instalación rápidas
+## Instalación rápida
 ```bash
 composer install
 cp .env.example .env
