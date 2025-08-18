@@ -15,6 +15,7 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # se empezo con la migraciones de tablas
 # implementacion entorno grafico
 # se corrigio el problema con push
+# modificacion de la carpeta models
 
 
 ## Instalación rápida
