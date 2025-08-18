@@ -1,4 +1,4 @@
--- VikingBarbershop demo SQL (opcional si no quieres usar migrations)
+
 CREATE TABLE IF NOT EXISTS clientes (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(120) NOT NULL,
