@@ -22,12 +22,8 @@ Reservas, clientes, galería con subida de imágenes, blog y autenticación con 
 # empece con el archivo de registro
 # empezamos a crear las pestañas de funciones para nuestra pagina
 # corregir problemas (no reconoce variables)
-<<<<<<< HEAD
-# haciendo pruebas para que el frontend agarre los datos en la base de datos
-=======
 # se actualizo campos de datos en el frontend
->>>>>>> ab531d1c9df28225d4fa9340b9791147b9eedf48
-
+#
 
 
 ## Instalación rápida
